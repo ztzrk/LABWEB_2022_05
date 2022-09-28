@@ -3,13 +3,16 @@ body {
     background-color: #060608;
 }
 
+.header {
+    display: block;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-    position: fixed;
+    background-color: #1B262C;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -23,25 +26,29 @@ li {
 li a {
     font-weight: 700;
     display: block;
-    color: white;
+    color: #BBE1FA;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     transition: background-color 0.5s;
 }
 
-li a:hover:not(.brand) {
-    background-color: #111;
-    opacity: 50%;
+li a:hover:not(.brand), li a:focus{
+    background-color: #00a3cc;
 }
 
-.cover {
-    object-fit: cover;
-    width: 100%;
+.jumbotron {
+    background-image: url(Assets/1146225.jpg);
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: opacity 1s;
-    opacity: 50%;
+    opacity: 20%;
 }
-.cover:hover {
+
+.jumbotron:hover {
     opacity: 100%;
 }
 
@@ -52,14 +59,12 @@ li a:hover:not(.brand) {
                     3px 3px 0px #005266;
 }
 
-h1 {
+.welcome {
     text-align: center;
     width: 100%;
-    height: 120%;
-    color: white;
+    color: #BBE1FA;
     font-size: 70px;
-    font-weight: 700;
-    opacity: 70%;
+    font-weight: 700;   
     transition: opacity 1s;
     text-shadow:    5px 5px 0px black, 
                     7px 7px 0px #80e5ff, 
@@ -72,42 +77,37 @@ h1 {
                     21px 21px 0px #005266;
 }
 
-h1:hover {
-    opacity: 100%;
-}
-
 h2 {
     text-align: center;
     width: 100%;
-    color: white;
+    color: #BBE1FA;
     font-weight: 700;
 }
 
-table{
-    width: 100%; 
+.profile {
     padding-left: 20%;
     padding-right: 20%;
+    display: flex;
+    text-align: justify;
+    align-items: center;
 }
 
-td {
-    padding: 30px;
-    color: white;
+.konten {
+    float: left;
+}
+
+p {
+    padding: 10px;
+    color: #BBE1FA;
     transition: color 1s, background-color 1s;
 }
 
-td:hover {
-    color: #060608;
-    background-color: white;
+p:hover {
+    background-color: #BBE1FA;
+    color: #1B262C;
 }
 
-h3 {
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: 700;
-}
-
-div.IMGgallery {
+div.gallery-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -121,11 +121,12 @@ div.gallery {
     opacity: 50%;
     width: 180px;
     height: 300px;
-    transition: width 1s, opacity 1s;
+    transition: width 1s, opacity 1s, background-color 1s;
 }
   
 div.gallery:hover {
-    border: 1px solid #777;
+    background-color: #BBE1FA;
+    border: 1px solid #BBE1FA;
     opacity: 100%;
     width: 360px;
 }
@@ -135,9 +136,10 @@ div.gallery img {
     height: 250px;
     object-fit:contain;
 }
-  
-div.desc {
-    padding: 15px;
+
+.desc {
+    color: #1B262C;
     text-align: center;
-    color: white;
+    font-size: 20px;
+    font-weight: 700;
 }
