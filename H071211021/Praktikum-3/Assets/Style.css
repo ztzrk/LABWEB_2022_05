@@ -1,0 +1,47 @@
+.carousel-item {
+    object-fit: contain;
+    max-height: 500px;
+}
+
+#content-description
+.col-md-6 {
+    transition: background-color 1s, color 1s;
+    padding: 10px;
+}
+
+#content-description
+.col-md-6:hover {
+    background-color: white;
+    color: black;
+}
+
+#artist-badges {
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+#artist-badges
+.badge {
+    background-color: #ff71ce;
+}
+
+#vaporwave-artist {
+    background-color: violet;
+    border-radius: 20px;
+}
+
+.card img {
+    background-color: blueviolet;
+    object-fit: contain;
+    height: 500px;
+}
+
+.card-body {
+    background-color: 	#01cdfe;
+}
+
+.alert a{
+    float: right;
+}
