@@ -1,0 +1,70 @@
+body {
+    background-color: #08D9D6;
+    color: #EAEAEA;
+}
+
+#bet-menu > div > div > div.card {
+    background-color: #FF2E63;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+
+#bet-menu > div > div > div.card:hover {
+    background-color: #252A34;
+    border-color: #EAEAEA;
+    color: #FF2E63;
+}
+
+#card-collection .card {
+    background-color: #FF2E63;
+    width: 10%;
+    margin: 10px;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+
+#card-collection .card:hover {
+    background-color: #252A34;
+    border-color: #EAEAEA;
+    color: #FF2E63;
+}
+
+.card-title {
+    text-align: left;
+}
+
+.bottom {
+    text-align: right;
+}
+
+#menu {
+    background-color: #252A34;
+    border-radius: 50px;
+    padding: 40px;
+}
+
+#menu * {
+    text-align: center;
+}
+
+#bet-menu {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #252A34;
+    border-radius: 50px;
+    padding: 40px;
+    height: 450px;
+}
+
+#play-menu {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #252A34;
+    border-radius: 50px;
+    padding: 40px;
+    display: none;
+    height: 450px;
+}
+
+#hitAndStand .btn{
+    width: 100px;
+    margin: 10px;
+}
