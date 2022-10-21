@@ -6,7 +6,7 @@ var win = false;
 createDeck();
 
 function setBet() {
-    let x = document.getElementById("Bet").value;
+    let x = document.getElementById("js-bet").value;
     document.getElementById("valid").style.display = 'none';
     
     let text;
