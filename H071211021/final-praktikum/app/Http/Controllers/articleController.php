@@ -81,27 +81,30 @@ class articleController extends Controller
             ->with(compact('data3'));
     }
 
-    public function edit(Request $request, $id, $id2){
-        $request->validate([
-            'name'=>'required',
-        ]);
-        $data2 = DB::table('users')->find($id2);
-        $data1 = DB::table('articles')->find($id);
-        $data3 = DB::table('categories')->where('id', $data1->category_id)->get();
-        $data4 = DB::table('article_tags')->where('article_id', $data1->id)->get();
-        $data5 = article::with('tags')->get();
+    public function showArticleEdit($id)
+    {
+        $data = DB::table('categories')->where('author_id', Auth::id())->get();
+        $data2 = DB::table('tags')->where('author_id', Auth::id())->get();
+        $data3 = DB::table('sub_category')->where('author_id', Auth::id())->get();
+        $data4 = DB::table('articles')->where('id', $id)->get();
         return view('member/articleEdit')
-            -> with(compact('data2'))
-            -> with(compact('data1'))
-            -> with(compact('data3'))
-            -> with(compact('data4'))
-            -> with(compact('data5'));
-        
-        $category = category::find($id);
-        $category->name = $request->name;
+            ->with(compact('data'))
+            ->with(compact('data2'))
+            ->with(compact('data3'))
+            ->with(compact('data4'));
+    }
 
-        $category->save();
+    public function edit(Request $request, $id){
+        $article = article::find($id);
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->body = $request->body;
+        $article->member_id = Auth::id();
+        $article->category_id = $request->category;
+        $article->sub_category_id = $request->subCategory;
+        $article->status = $request->status;
 
-        return redirect()->to('/category')->send()->with('success', 'Data berhasil di edit!');
+        $article->save();
+        return redirect()->to('/articles')->send()->with('success', 'Data berhasil di edit!');
     }
 }

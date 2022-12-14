@@ -88,7 +88,7 @@
                 </li>
               </ul>
               <div class="text-center mt-5 mb-3">
-                <a href="articleEdit/{{$data1->id}}/{{$data1->member_id}}" class="btn btn-sm btn-warning">Edit Article</a>
+                <a href="/articleEdit/{{$data1->id}}" class="btn btn-sm btn-warning">Edit Article</a>
               </div>
             </div>
           </div>

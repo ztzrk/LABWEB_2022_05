@@ -29,7 +29,9 @@ Route::group(['middleware' => ['auth', 'hakAkses:member, admin']], function(){
 
     Route::get('articleDetail/{id}/{id2}', [articleController::class , 'showArticleDetail']);
 
-    Route::post('articleEdit/{id}/{id2}', [articleController::class , 'edit']);
+    Route::get('articleEdit/{id}', [articleController::class, 'showArticleEdit']);
+
+    Route::post('editArticle/{id}', [articleController::class, 'edit']);
 
     Route::post('editCategory/{id}', [categoryController::class, 'edit']);
 

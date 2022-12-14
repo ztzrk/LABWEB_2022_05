@@ -28,21 +28,27 @@
 
                 <div class="col-12">
                     <div class="form-group">
-                        <form action="createArticle" method="POST">
+                        @foreach($data4 as $item)
+                        <form action="/editArticle/{{$item->id}}" method="POST">
+                        @endforeach
                             @csrf
                                 <label for="inputName">Title</label>
-                                <input type="text" id="title" name="title" class="form-control">
+                                @foreach($data4 as $item)
+                                <input type="text" id="title" name="title" value="{{$item->title}}" class="form-control">
+                                @endforeach
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">Description (At least 20 characters)</label>
-                                <input type="text" id="description" name="description" class="form-control">
+                                @foreach($data4 as $item)
+                                <input type="text" id="description" name="description" class="form-control" value="{{$item->description}}">
+                                @endforeach
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">Category</label>
                                 <select class="form-select" name="category" aria-label="Default select example">
                                     <option selected>-- Category</option>
                                     @foreach($data as $item)
-                                    <option value="{{$item->id}}">{{$item -> name}}</option>
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -66,7 +72,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputMessage">Articles's Body</label>
-                                <textarea id="body" class="form-control" name="body" rows="4"></textarea>
+                                @foreach($data4 as $item)
+                                <textarea id="body" class="form-control" name="body" rows="4" value="{{$item->body}}"></textarea>
+                                @endforeach
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
