@@ -1,0 +1,31 @@
+body {
+  background-color: gray;
+}
+
+#outer {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#form-mahasiswa {
+  padding: 20px;
+}
+
+#tabel-mahasiswa {
+  padding: 10px;
+}
+
+.p1 {
+  color: red;
+}
+
+#edit-button {
+  margin-right: 20px;
+}
+
+#login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
