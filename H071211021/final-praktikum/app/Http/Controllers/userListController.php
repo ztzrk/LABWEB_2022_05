@@ -10,7 +10,7 @@ class userListController extends Controller
 {
     public function showUserList()
     {
-        $data = userList::paginate(10);
+        $data = userList::get();
         return view('member/userList')->with(compact('data'));
     }
 }

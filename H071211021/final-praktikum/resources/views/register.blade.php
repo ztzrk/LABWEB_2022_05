@@ -22,7 +22,7 @@
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new member</p>
+      <p class="login-box-msg">Register a new membership</p>
 
       <form action="registerProcess" method="post">
         @csrf
@@ -61,7 +61,7 @@
         <button type="submit" class="btn btn-primary btn-block">Register</button>
       </form>
 
-      <a href="/login" class="text-center">I already have a member account</a>
+      <a href="/login" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

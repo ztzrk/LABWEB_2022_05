@@ -13,7 +13,7 @@ class categoryController extends Controller
 {
     public function showCategory()
     {
-        $data = category::withCount('articles')->where('author_id', Auth::id())->paginate(10);
+        $data = category::withCount('articles')->where('author_id', Auth::id())->get();
         return view('member/category')
             ->with(compact('data'));
     }

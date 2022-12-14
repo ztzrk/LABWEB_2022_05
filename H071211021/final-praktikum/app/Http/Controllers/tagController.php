@@ -12,7 +12,7 @@ class tagController extends Controller
 {
     public function showTag()
     {
-        $data = tag::withCount('articles')->where('author_id', Auth::id())->paginate(10);
+        $data = tag::withCount('articles')->where('author_id', Auth::id())->get();
         return view('member/tag')
             ->with(compact('data'));
     }

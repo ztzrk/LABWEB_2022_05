@@ -13,7 +13,7 @@ class subCategoryController extends Controller
 {
     public function showSubCategory()
     {
-        $data = subCategory::withCount('articles')->where('author_id', Auth::id())->paginate(10);
+        $data = subCategory::withCount('articles')->where('author_id', Auth::id())->get();
         $data2 = DB::table('categories')->where('author_id', Auth::id())->get();
         return view('member/subCategory')
             ->with(compact('data'))

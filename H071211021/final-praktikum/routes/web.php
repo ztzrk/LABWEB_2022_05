@@ -11,6 +11,8 @@ use App\Http\Controllers\userListController;
 use App\Http\Controllers\homePageController;
 use App\Http\Controllers\articleListController;
 use App\Http\Controllers\memberListController;
+use App\Http\Controllers\memberDetailController;
+
 
 
 Route::group(['middleware' => ['auth', 'hakAkses:member, admin']], function(){
@@ -28,10 +30,6 @@ Route::group(['middleware' => ['auth', 'hakAkses:member, admin']], function(){
     Route::post('createCategory', [categoryController::class , 'create']);
 
     Route::get('articleDetail/{id}/{id2}', [articleController::class , 'showArticleDetail']);
-
-    Route::get('articleEdit/{id}', [articleController::class, 'showArticleEdit']);
-
-    Route::post('editArticle/{id}', [articleController::class, 'edit']);
 
     Route::post('editCategory/{id}', [categoryController::class, 'edit']);
 
@@ -57,11 +55,16 @@ Route::group(['middleware' => ['auth', 'hakAkses:member, admin']], function(){
 
     Route::get('userList', [userListController::class , 'showUserList']);
 
+    Route::get('articleEdit/{id}', [articleController::class, 'showArticleEdit']);
+
+    Route::post('editArticle/{id}', [articleController::class, 'edit']);
+
 });
 
 Route::get('', [homePageController::class , 'showHomePage']);
 Route::get('articleList', [articleListController::class , 'showArticleList']);
 Route::get('memberList', [memberListController::class , 'showMemberList']);
+Route::get('memberDetail/{id}', [memberDetailController::class , 'showMemberDetail']);
 
 Route::get('/login', [loginController::class , 'showLogin'])->name('login');
 Route::post('loginProcess', [loginController::class , 'login']);

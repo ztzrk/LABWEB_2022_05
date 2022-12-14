@@ -5,25 +5,6 @@
     <section class="content">
         <div class="container-fluid">
             <h2 class="text-center display-4">Your Sub Category</h2>
-            <form action="enhanced-results.html">
-                <div class="row">
-                    <div class="col-md-10 offset-md-1">
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <div class="input-group input-group-lg">
-                                    <input type="search" class="form-control form-control-lg"
-                                        placeholder="Type your keywords here">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-lg btn-default">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
         <div class="card">
             <div class="card-header d-flex">
@@ -34,7 +15,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="tableBlog">
                     <thead>
                         <tr>
                             <th style="width: 10px">No</th>
@@ -49,7 +30,7 @@
                     <tbody>
                         @foreach($data as $index => $item)
                         <tr>
-                            <td> {{ $index + $data->firstItem() }} </td>
+                            <td> {{ $index + 1 }} </td>
                             <td> {{ $item->name }} </td>
                             <td> {{$item -> category_id}} </td>
                             <td>{{ $item->articles_count }}</td>

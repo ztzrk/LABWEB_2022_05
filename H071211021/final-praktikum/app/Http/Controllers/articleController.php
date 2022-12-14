@@ -19,7 +19,7 @@ class articleController extends Controller
         $data1 = DB::table('articles')->find($id);
         $data3 = DB::table('categories')->where('id', $data1->category_id)->get();
         $data4 = DB::table('article_tags')->where('article_id', $data1->id)->get();
-        $data5 = article::with('tags')->get();
+        $data5 = articleTag::where('article_id', $data1->id)->get();
         return view('member/articleDetail')
             -> with(compact('data2'))
             -> with(compact('data1'))
@@ -30,7 +30,7 @@ class articleController extends Controller
 
     public function showArticles()
     {
-        $data = article::where('member_id', Auth::id())->paginate(10);
+        $data = article::where('member_id', Auth::id())->get();
         return view('member/article')->with(compact('data'));
     }
 
@@ -54,18 +54,16 @@ class articleController extends Controller
         $article->status = $request->status;
 
         $article->save();
-        $data[]= [];
+
         $query = DB::table('tags')->where('author_id', Auth::id())->get();
         foreach ($query as $list) {
             $data[] = array(
             'article_id'  => $article->id,
             'tag_id'      => $request->input('tags'.$list->id),
-            
           );
         }
         //dd($data);
         DB::table('article_tags')->insert($data); 
-       
 
         return redirect()->to('/articles')->send()->with('success', 'Your Articles Successfully Uploaded!');
     }
@@ -105,6 +103,19 @@ class articleController extends Controller
         $article->status = $request->status;
 
         $article->save();
+
+        $deleteTag = DB::table('article_tags')->where('article_id', $id)->delete();
+
+        $query = DB::table('tags')->where('author_id', Auth::id())->get();
+        foreach ($query as $list) {
+            $data[] = array(
+            'article_id'  => $article->id,
+            'tag_id'      => $request->input('tags'.$list->id),
+          );
+        }
+        //dd($data);
+        DB::table('article_tags')->insert($data);
+
         return redirect()->to('/articles')->send()->with('success', 'Data berhasil di edit!');
     }
 }

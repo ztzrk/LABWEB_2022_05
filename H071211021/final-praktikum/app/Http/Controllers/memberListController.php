@@ -9,7 +9,7 @@ class memberListController extends Controller
 {
     public function showMemberList()
     {
-        $data = memberList::withCount('articles')->paginate(10);
+        $data = memberList::withCount('articles')->get();
         return view('memberList')
             -> with(compact('data'));
     }

@@ -74,9 +74,7 @@
                 </p>
                 <p class="text-sm">Tags
                   @foreach ($data5 as $itemss)
-                    @foreach ($itemss->tags as $tag)
-                    <b class="d-block">{{$tag -> name}}</b>
-                    @endforeach
+                    <b class="d-block">{{$itemss -> tag_id}}</b>
                   @endforeach
                 </p>
               </div>
@@ -88,7 +86,7 @@
                 </li>
               </ul>
               <div class="text-center mt-5 mb-3">
-                <a href="/articleEdit/{{$data1->id}}" class="btn btn-sm btn-warning">Edit Article</a>
+              <a href="/articleEdit/{{$data1->id}}" class="btn btn-sm btn-warning">Edit Article</a>
               </div>
             </div>
           </div>

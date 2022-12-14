@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="{{asset('blogTemplate/assets/vendors/themify-icons/css/themify-icons.css')}}">
     <!-- Bootstrap + JoeBLog main styles -->
 	<link rel="stylesheet" href="{{asset('blogTemplate/assets/css/joeblog.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     
@@ -60,6 +64,13 @@
     <!-- JoeBLog js -->
     <script src="http://127.0.0.1:8000/blogTemplate/assets/js/joeblog.js"></script>
 
+    <!-- datatable -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready( function () {
+         $('#tableBlog').DataTable();
+      } );
+   </script>
 
 
 </body>

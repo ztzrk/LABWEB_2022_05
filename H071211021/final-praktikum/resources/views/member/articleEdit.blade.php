@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <label for="inputMessage">Articles's Body</label>
                                 @foreach($data4 as $item)
-                                <textarea id="body" class="form-control" name="body" rows="4" value="{{$item->body}}"></textarea>
+                                <textarea id="body" class="form-control" name="body" rows="4" value="{{$item->body}}">{{ $item->body }}</textarea>
                                 @endforeach
                             </div>
                             <div class="form-group">
